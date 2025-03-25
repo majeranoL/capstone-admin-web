@@ -81,8 +81,8 @@ const Posts: React.FC = () => {
         </div>
 
         <div className="content-area">
-          <IonCard className="content-card light-theme">
-            <IonCardHeader>
+          <IonCard className="overview-card">
+            <IonCardHeader color = "danger">
               <IonCardTitle className="content-title">Post Details</IonCardTitle>
             </IonCardHeader>
             <IonCardContent>

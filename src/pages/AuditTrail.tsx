@@ -134,11 +134,11 @@ const AuditTrail: React.FC = () => {
         </div>
 
         <div className="content-area">
-          <IonCard className="content-card">
-            <IonCardHeader>
+          <IonCard className="overview-card">
+            <IonCardHeader color = "danger">
               <div className="card-header-with-button">
                 <IonCardTitle className="content-title">System Activity Logs</IonCardTitle>
-                <IonButton color="primary" size="small" onClick={() => setShowDatePicker(true)}>
+                <IonButton color="dark" size="small" onClick={() => setShowDatePicker(true)}>
                   <IonIcon slot="start" icon={calendarOutline} />
                   Select Date Range
                 </IonButton>

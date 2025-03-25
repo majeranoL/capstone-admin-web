@@ -1,17 +1,17 @@
 :root {
-    --ion-color-primary: #d23e3e;
-    --ion-color-primary-rgb: 210, 62, 62;
+    --ion-color-primary: #d50000;
+    --ion-color-primary-rgb: 213, 0, 0;
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255, 255, 255;
-    --ion-color-primary-shade: #b93737;
-    --ion-color-primary-tint: #d75151;
+    --ion-color-primary-shade: #bb0000;
+    --ion-color-primary-tint: #d91a1a;
   
-    --ion-color-danger: #d23e3e;
-    --ion-color-danger-rgb: 210, 62, 62;
+    --ion-color-danger: #d50000;
+    --ion-color-danger-rgb: 213, 0, 0;
     --ion-color-danger-contrast: #ffffff;
     --ion-color-danger-contrast-rgb: 255, 255, 255;
-    --ion-color-danger-shade: #b93737;
-    --ion-color-danger-tint: #d75151;
+    --ion-color-danger-shade: #bb0000;
+    --ion-color-danger-tint: #d91a1a;
   
     --ion-color-success: #2dd36f;
     --ion-color-success-rgb: 45, 211, 111;
@@ -176,7 +176,7 @@
   /* Styling for Posts, Dashboard, Users, Teams and Audit Trail */
   .content-area {
     color: #ffffff;
-    background-color: rgba(210, 62, 62, 0.05);
+    background-color: rgba(213, 0, 0, 0.05);
   }
   
   ion-content.post-content,
@@ -191,7 +191,7 @@
   ion-card.content-card {
     --background: #ffffff;
     color: var(--ion-color-primary);
-    border: 1px solid rgba(210, 62, 62, 0.2);
+    border: 1px solid rgba(213, 0, 0, 0.2);
   }
   
   ion-item.content-item {
@@ -215,33 +215,34 @@
   .overview-card,
   .events-card {
     --background: #ffffff;
-    color: var(--ion-color-primary);
-    border: 1px solid rgba(210, 62, 62, 0.2);
+    color: #333333;  /* Changed from var(--ion-color-primary) to dark gray */
+    border: 1px solid rgba(213, 0, 0, 0.2);
   }
   
   .overview-card ion-card-header,
   .events-card ion-card-header {
-    --color: var(--ion-color-primary);
+    --color: #ffffff;  /* White text for header */
+    background: #d50000;  /* Red background for header */
   }
   
   .overview-card ion-card-title,
   .events-card ion-card-title {
-    color: var(--ion-color-primary);
+    color: #ffffff;  /* White text for title */
   }
   
   .overview-card ion-card-content,
   .events-card ion-card-content {
-    color: var(--ion-color-primary);
+    color: #333333;  /* Dark gray for content */
   }
   
   .overview-card ion-item,
   .events-card ion-item {
     --background: #ffffff;
-    --color: var(--ion-color-primary);
+    --color: #333333;  /* Dark gray for items */
   }
   
   .overview-card ion-label,
   .events-card ion-label {
-    color: var(--ion-color-primary);
+    color: #333333;  /* Dark gray for labels */
   }
 

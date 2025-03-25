@@ -1,5 +1,5 @@
 .main-header {
-    --background: #d23e3e;
+    --background: #d50000;
     --color: white;
     --min-height: 60px;
     --padding-start: 16px;
@@ -30,7 +30,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 24px 32px;
-    background-color: #d23e3e;
+    background-color: #d50000;
     color: white;
     margin: 16px 24px 32px;
     border-radius: 8px;
@@ -60,7 +60,7 @@
   }
   
   .overview-card ion-card-header {
-    --background: #d23e3e;
+    --background: #d50000;
     --color: white;
     padding: 12px 16px;
   }
@@ -68,10 +68,12 @@
   .welcome-text {
     margin: 16px 0;
     font-size: 15px;
+    color: #333333;  /* Dark gray for welcome text */
   }
   
   .module-table {
     width: 100%;
+    color: #333333;  /* Dark gray for table text */
   }
   
   .table-header,
@@ -104,7 +106,7 @@
   }
   
   .action-col a {
-    color: #3880ff;
+    color: #d50000;  /* Changed from #3880ff to match theme */
     text-decoration: none;
   }
   
