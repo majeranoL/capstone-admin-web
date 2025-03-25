@@ -1,0 +1,234 @@
+.data-card {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+  }
+  
+  .card-header-with-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search-filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 10px;
+  }
+  
+  .custom-searchbar {
+    --background: #f5f5f5;
+    --border-radius: 4px;
+    --box-shadow: none;
+    flex: 1;
+    padding: 0;
+  }
+  
+  .filter-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filter-controls ion-select {
+    background: #f5f5f5;
+    border-radius: 4px;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    max-width: 120px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    margin-bottom: 16px;
+    border: 1px solid #eee;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .data-table th {
+    background-color: #f5f5f5;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+  }
+  
+  .data-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .actions-cell {
+    white-space: nowrap;
+  }
+  
+  .actions-cell ion-button {
+    --padding-start: 4px;
+    --padding-end: 4px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .team-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .team-name ion-icon {
+    color: #d23e3e;
+  }
+  
+  .date-popover {
+    --width: 300px;
+  }
+  
+  .popover-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 16px;
+    border-top: 1px solid #eee;
+  }
+  
+  .status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .status-badge.success {
+    background-color: rgba(45, 211, 111, 0.15);
+    color: #28ba62;
+  }
+  
+  .status-badge.warning {
+    background-color: rgba(255, 196, 9, 0.15);
+    color: #e0ac08;
+  }
+  
+  .status-badge.danger {
+    background-color: rgba(210, 62, 62, 0.15);
+    color: #d23e3e;
+  }
+  
+  .status-badge.neutral {
+    background-color: rgba(92, 92, 92, 0.15);
+    color: #5c5c5c;
+  }
+  
+  .card-header-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .data-meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #666;
+    font-size: 13px;
+  }
+  
+  .data-meta ion-icon {
+    font-size: 16px;
+  }
+
+  .form-buttons {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  ion-item {
+    margin-bottom: 16px;
+  }
+
+  /* Light theme modifications */
+  .content-card {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  ion-item {
+    --background: #ffffff;
+    --border-color: #e0e0e0;
+    margin-bottom: 16px;
+  }
+  
+  ion-input, ion-textarea, ion-select {
+    --background: #ffffff;
+    --color: #333333;
+    --placeholder-color: #999999;
+  }
+  
+  .form-buttons ion-button {
+    --background: #3880ff;
+    --background-hover: #3171e0;
+    --color: #ffffff;
+  }
+  
+  ion-label {
+    --color: #333333;
+  }
+  
+  .content-title {
+    color: #333333;
+  }
+  
+  .breadcrumb {
+    color: #666666;
+  }
+  
+  ion-card {
+    background: #ffffff;
+  }
+  
+  ion-card-header {
+    background: #f8f9fa;
+  }
+
+  /* Toggle styles */
+  ion-toggle {
+    --background: #ddd;
+    --background-checked: #ff4646;
+    --handle-background: #fff;
+    --handle-background-checked: #fff;
+  }
+
+  .form-buttons ion-button {
+    --background: #ff4646;
+    --background-hover: #d63e3e;
+    --color: #ffffff;
+  }
+
+  /* Toggle positioning */
+  .toggle-item {
+    --inner-padding-end: 0;
+    --padding-start: 0;
+  }
+
+  .toggle-item ion-toggle {
+    margin-right: 8px;
+  }
+
