@@ -1,17 +1,17 @@
 :root {
-    --ion-color-primary: #d50000;
-    --ion-color-primary-rgb: 213, 0, 0;
+    --ion-color-primary: #800000;
+    --ion-color-primary-rgb: 128, 0, 0;
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255, 255, 255;
-    --ion-color-primary-shade: #bb0000;
-    --ion-color-primary-tint: #d91a1a;
+    --ion-color-primary-shade: #710000;
+    --ion-color-primary-tint: #8d1a1a;
   
-    --ion-color-danger: #d50000;
-    --ion-color-danger-rgb: 213, 0, 0;
+    --ion-color-danger: #800000;
+    --ion-color-danger-rgb: 128, 0, 0;
     --ion-color-danger-contrast: #ffffff;
     --ion-color-danger-contrast-rgb: 255, 255, 255;
-    --ion-color-danger-shade: #bb0000;
-    --ion-color-danger-tint: #d91a1a;
+    --ion-color-danger-shade: #710000;
+    --ion-color-danger-tint: #8d1a1a;
   
     --ion-color-success: #2dd36f;
     --ion-color-success-rgb: 45, 211, 111;
@@ -176,7 +176,7 @@
   /* Styling for Posts, Dashboard, Users, Teams and Audit Trail */
   .content-area {
     color: #ffffff;
-    background-color: rgba(213, 0, 0, 0.05);
+    background-color: rgba(128, 0, 0, 0.05);
   }
   
   ion-content.post-content,
@@ -191,7 +191,7 @@
   ion-card.content-card {
     --background: #ffffff;
     color: var(--ion-color-primary);
-    border: 1px solid rgba(213, 0, 0, 0.2);
+    border: 1px solid rgba(128, 0, 0, 0.2);
   }
   
   ion-item.content-item {
@@ -216,13 +216,13 @@
   .events-card {
     --background: #ffffff;
     color: #333333;  /* Changed from var(--ion-color-primary) to dark gray */
-    border: 1px solid rgba(213, 0, 0, 0.2);
+    border: 1px solid rgba(128, 0, 0, 0.2);
   }
   
   .overview-card ion-card-header,
   .events-card ion-card-header {
     --color: #ffffff;  /* White text for header */
-    background: #d50000;  /* Red background for header */
+    background: #800000;  /* Maroon background for header */
   }
   
   .overview-card ion-card-title,

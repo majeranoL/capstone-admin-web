@@ -142,7 +142,7 @@ const Users: React.FC = () => {
             <IonCardHeader color = "danger">
               <div className="card-header-with-button">
                 <IonCardTitle className="content-title">All Users</IonCardTitle>
-                <IonButton color="primary" size="small">
+                <IonButton color="light" size="small">
                   <IonIcon slot="start" icon={addOutline} />
                   Add New User
                 </IonButton>

@@ -95,7 +95,7 @@ const Teams: React.FC = () => {
             <IonCardHeader color = "danger">
               <div className="card-header-with-button">
                 <IonCardTitle className="content-title">All Teams</IonCardTitle>
-                <IonButton color="primary" size="small">
+               <IonButton color="light" size="small">
                   <IonIcon slot="start" icon={addOutline} />
                   Create New Team
                 </IonButton>

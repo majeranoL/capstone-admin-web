@@ -1,5 +1,5 @@
 .main-header {
-    --background: #d50000;
+    --background: #800000;
     --color: white;
     --min-height: 60px;
     --padding-start: 16px;
@@ -30,7 +30,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 24px 32px;
-    background-color: #d50000;
+    background-color: #800000;
     color: white;
     margin: 16px 24px 32px;
     border-radius: 8px;
@@ -106,7 +106,7 @@
   }
   
   .action-col a {
-    color: #d50000;  /* Changed from #3880ff to match theme */
+    color: #800000;
     text-decoration: none;
   }
   
