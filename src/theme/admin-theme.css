@@ -175,6 +175,7 @@
 
   /* Styling for Posts, Dashboard, Users, Teams and Audit Trail */
   .content-area {
+    padding: 25px;
     color: #ffffff;
     background-color: rgba(128, 0, 0, 0.05);
   }
