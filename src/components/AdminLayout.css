@@ -1,0 +1,175 @@
+.main-header {
+  --background: #800000;
+  --color: white;
+  --min-height: 60px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+.admin-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.avatar-container:hover .admin-avatar {
+  transform: scale(1.1);
+}
+
+/* Reset and fix popover styles */
+.admin-popover {
+  --width: 200px;
+  --background: #ffffff;
+  --offset-y: 12px;
+  --arrow-color: #ffffff;
+  position: absolute;
+  right: 0;
+  box-shadow: 0 2px 8px rgba(128, 0, 0, 0.15);
+}
+
+/* Force background color for list and items */
+.admin-popover ion-list {
+  background: #ffffff !important;
+  padding: 0;
+}
+
+.admin-popover::part(arrow) {
+  display: block;
+}
+
+.admin-popover::part(content) {
+  margin-top: 8px;
+  position: fixed;
+  right: 16px !important;
+  top: 60px !important;
+  left: auto;
+  transform: none;
+}
+
+.admin-popover ion-item {
+  --background: #ffffff !important;
+  --color: #000000 !important;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 44px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.admin-popover ion-item:hover {
+  --background: #800000 !important;
+  --color: #ffffff !important;
+}
+
+.admin-popover ion-icon {
+  color: #000000 !important;
+  margin-right: 8px;
+}
+
+.admin-popover ion-item:hover ion-icon {
+  color: #ffffff !important;
+}
+
+.popover-list {
+  background: #ffffff;
+  padding: 0;
+}
+
+.popover-item {
+  --background: #ffffff;
+  --color: #333333;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+.popover-item ion-icon {
+  color: #333333;
+  margin-right: 8px;
+}
+
+.popover-item:hover {
+  --background: #800000;
+  --color: #ffffff;
+}
+
+.popover-item:hover ion-icon {
+  color: #ffffff;
+}
+
+.admin-content {
+  --background: #ffffff;
+  --padding: 0;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background-color: #800000;
+  color: white;
+  margin: 16px 24px 32px;
+  border-radius: 8px;
+}
+
+.content-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.content-area {
+  padding: 0 24px 24px;
+}
+
+/* Add new styles */
+ion-content {
+  z-index: 0;         /* Added */
+}
+
+ion-header {
+  z-index: 999;       /* Added */
+}
+
+.admin-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.admin-name {
+  color: white;
+  font-size: 14px;
+}

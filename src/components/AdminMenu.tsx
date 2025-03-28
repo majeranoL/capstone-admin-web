@@ -37,6 +37,7 @@ const appPages: AppPage[] = [
     url: "/audit",
     icon: timeOutline,
   },
+
 ]
 
 const AdminMenu: React.FC = () => {

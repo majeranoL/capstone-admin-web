@@ -1,15 +1,7 @@
 "use client"
 
 import type React from "react"
-
 import {
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonMenuButton,
-  IonPage,
-  IonTitle,
-  IonToolbar,
   IonCard,
   IonCardHeader,
   IonCardTitle,
@@ -23,6 +15,7 @@ import {
 } from "@ionic/react"
 import { eyeOutline, calendarOutline, filterOutline } from "ionicons/icons"
 import { useState } from "react"
+import AdminLayout from "../components/AdminLayout"
 import "./Dashboard.css"
 import "./Pages.css"
 
@@ -113,125 +106,103 @@ const AuditTrail: React.FC = () => {
   ]
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary" className="main-header">
-          <IonButtons slot="start">
-            <IonMenuButton />
-          </IonButtons>
-          <IonTitle>CESO Admin</IonTitle>
-          <div className="admin-info" slot="end">
-            <span>Admin Name</span>
-            <img src="/placeholder.svg?height=32&width=32" alt="Admin" className="admin-avatar" />
+    <AdminLayout title="CESO Admin" pageTitle="Audit Trail" breadcrumb="Admin / Audit Trail">
+      <IonCard className="overview-card">
+        <IonCardHeader color="danger">
+          <div className="card-header-with-button">
+            <IonCardTitle className="content-title">System Activity Logs</IonCardTitle>
+            <IonButton color="dark" size="small" onClick={() => setShowDatePicker(true)}>
+              <IonIcon slot="start" icon={calendarOutline} />
+              Select Date Range
+            </IonButton>
+            <IonPopover
+              isOpen={showDatePicker}
+              onDidDismiss={() => setShowDatePicker(false)}
+              className="date-popover"
+            >
+              <IonDatetime presentation="date" multiple={true} />
+              <div className="popover-buttons">
+                <IonButton fill="clear" onClick={() => setShowDatePicker(false)}>
+                  Cancel
+                </IonButton>
+                <IonButton onClick={() => setShowDatePicker(false)}>Apply</IonButton>
+              </div>
+            </IonPopover>
           </div>
-        </IonToolbar>
-      </IonHeader>
+        </IonCardHeader>
+        <IonCardContent>
+          <div className="search-filter-container">
+            <IonSearchbar placeholder="Search audit logs..." className="custom-searchbar"></IonSearchbar>
+            <IonButton color="medium" size="small">
+              <IonIcon slot="start" icon={filterOutline} />
+              Filters
+            </IonButton>
+          </div>
 
-      <IonContent className="audit-content">
-        <div className="dashboard-header">
-          <h1 className="content-title">Audit Trail</h1>
-          <span className="breadcrumb content-text">Admin / Audit Trail</span>
-        </div>
+          <div className="table-container">
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Action</th>
+                  <th>User</th>
+                  <th>Timestamp</th>
+                  <th>IP Address</th>
+                  <th>Status</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                {auditLogs.map((log) => (
+                  <tr key={log.id}>
+                    <td>{log.id}</td>
+                    <td>{log.action}</td>
+                    <td>{log.user}</td>
+                    <td>{log.timestamp}</td>
+                    <td>{log.ip}</td>
+                    <td>
+                      <IonBadge color={log.status === "Success" ? "success" : "danger"}>{log.status}</IonBadge>
+                    </td>
+                    <td className="actions-cell">
+                      <IonButton fill="clear" size="small" color="primary">
+                        <IonIcon icon={eyeOutline} />
+                      </IonButton>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-        <div className="content-area">
-          <IonCard className="overview-card">
-            <IonCardHeader color = "danger">
-              <div className="card-header-with-button">
-                <IonCardTitle className="content-title">System Activity Logs</IonCardTitle>
-                <IonButton color="dark" size="small" onClick={() => setShowDatePicker(true)}>
-                  <IonIcon slot="start" icon={calendarOutline} />
-                  Select Date Range
-                </IonButton>
-                <IonPopover
-                  isOpen={showDatePicker}
-                  onDidDismiss={() => setShowDatePicker(false)}
-                  className="date-popover"
-                >
-                  <IonDatetime presentation="date" multiple={true} />
-                  <div className="popover-buttons">
-                    <IonButton fill="clear" onClick={() => setShowDatePicker(false)}>
-                      Cancel
-                    </IonButton>
-                    <IonButton onClick={() => setShowDatePicker(false)}>Apply</IonButton>
-                  </div>
-                </IonPopover>
-              </div>
-            </IonCardHeader>
-            <IonCardContent>
-              <div className="search-filter-container">
-                <IonSearchbar placeholder="Search audit logs..." className="custom-searchbar"></IonSearchbar>
-                <IonButton color="medium" size="small">
-                  <IonIcon slot="start" icon={filterOutline} />
-                  Filters
-                </IonButton>
-              </div>
-
-              <div className="table-container">
-                <table className="data-table">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Action</th>
-                      <th>User</th>
-                      <th>Timestamp</th>
-                      <th>IP Address</th>
-                      <th>Status</th>
-                      <th>Details</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {auditLogs.map((log) => (
-                      <tr key={log.id}>
-                        <td>{log.id}</td>
-                        <td>{log.action}</td>
-                        <td>{log.user}</td>
-                        <td>{log.timestamp}</td>
-                        <td>{log.ip}</td>
-                        <td>
-                          <IonBadge color={log.status === "Success" ? "success" : "danger"}>{log.status}</IonBadge>
-                        </td>
-                        <td className="actions-cell">
-                          <IonButton fill="clear" size="small" color="primary">
-                            <IonIcon icon={eyeOutline} />
-                          </IonButton>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              <div className="pagination">
-                <span>Showing 1-10 of 150 logs</span>
-                <div className="pagination-controls">
-                  <IonButton size="small" fill="clear">
-                    Previous
-                  </IonButton>
-                  <IonButton size="small" fill="solid">
-                    1
-                  </IonButton>
-                  <IonButton size="small" fill="clear">
-                    2
-                  </IonButton>
-                  <IonButton size="small" fill="clear">
-                    3
-                  </IonButton>
-                  <IonButton size="small" fill="clear">
-                    ...
-                  </IonButton>
-                  <IonButton size="small" fill="clear">
-                    15
-                  </IonButton>
-                  <IonButton size="small" fill="clear">
-                    Next
-                  </IonButton>
-                </div>
-              </div>
-            </IonCardContent>
-          </IonCard>
-        </div>
-      </IonContent>
-    </IonPage>
+          <div className="pagination">
+            <span>Showing 1-10 of 150 logs</span>
+            <div className="pagination-controls">
+              <IonButton size="small" fill="clear">
+                Previous
+              </IonButton>
+              <IonButton size="small" fill="solid">
+                1
+              </IonButton>
+              <IonButton size="small" fill="clear">
+                2
+              </IonButton>
+              <IonButton size="small" fill="clear">
+                3
+              </IonButton>
+              <IonButton size="small" fill="clear">
+                ...
+              </IonButton>
+              <IonButton size="small" fill="clear">
+                15
+              </IonButton>
+              <IonButton size="small" fill="clear">
+                Next
+              </IonButton>
+            </div>
+          </div>
+        </IonCardContent>
+      </IonCard>
+    </AdminLayout>
   )
 }
 
