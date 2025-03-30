@@ -15,7 +15,7 @@ import {
 } from "@ionic/react"
 import { eyeOutline, calendarOutline, filterOutline } from "ionicons/icons"
 import { useState } from "react"
-import AdminLayout from "../components/AdminLayout"
+import AdminLayout from "../../components/SAdmin/AdminLayout"
 import "./Dashboard.css"
 import "./Pages.css"
 

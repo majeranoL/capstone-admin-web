@@ -1,15 +1,16 @@
 import type React from "react"
 import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from "@ionic/react"
 import { IonReactRouter } from "@ionic/react-router"
-import { Redirect, Route } from "react-router-dom"
-import AdminMenu from "./components/AdminMenu"
-import Dashboard from "./pages/Dashboard"
-import Posts from "./pages/Posts"
-import Users from "./pages/Users"
-import Teams from "./pages/Teams"
-import AuditTrail from "./pages/AuditTrail"
+import { Redirect, Route, Switch } from "react-router-dom"
+import AdminMenu from "./components/SAdmin/AdminMenu"
+import Dashboard from "./pages/SuperAdmin/Dashboard"
+import Posts from "./pages/SuperAdmin/Posts"
+import Users from "./pages/SuperAdmin/Users"
+import Teams from "./pages/SuperAdmin/Teams"
+import AuditTrail from "./pages/SuperAdmin/AuditTrail"
 import Login from "./pages/Login"
-import Page from "./pages/Page"
+import Applications from "./pages/SuperAdmin/Applications"
+import AdminAccountCreation from "./pages/SuperAdmin/Accounts"
 import { useEffect, useState } from "react"
 
 /* Core CSS required for Ionic components to work properly */
@@ -53,40 +54,31 @@ const App: React.FC = () => {
           <IonSplitPane contentId="main">
             <AdminMenu />
             <IonRouterOutlet id="main">
-              <Route path="/" exact={true}>
-                <Redirect to="/dashboard" />
-              </Route>
-              <Route path="/dashboard" exact={true}>
-                <Dashboard />
-              </Route>
-              <Route path="/posts" exact={true}>
-                <Posts />
-              </Route>
-              <Route path="/users" exact={true}>
-                <Users />
-              </Route>
-              <Route path="/teams" exact={true}>
-                <Teams />
-              </Route>
-              <Route path="/audit" exact={true}>
-                <AuditTrail />
-              </Route>
-              <Route path="/folder/:name" exact={true}>
-                <Page />
-              </Route>
+              <Switch>
+                <Route path="/" exact={true}>
+                  <Redirect to="/dashboard" />
+                </Route>
+                <Route path="/dashboard" exact={true} component={Dashboard} />
+                <Route path="/posts" exact={true} component={Posts} />
+                <Route path="/users" exact={true} component={Users} />
+                <Route path="/teams" exact={true} component={Teams} />
+                <Route path="/audit" exact={true} component={AuditTrail} />
+                <Route path="/applications" exact={true} component={Applications} />
+                <Route path="/accounts" exact={true} component={AdminAccountCreation} />
+                <Route>
+                  <Redirect to="/dashboard" />
+                </Route>
+              </Switch>
             </IonRouterOutlet>
           </IonSplitPane>
         ) : (
           <IonRouterOutlet>
-            <Route path="/" exact={true}>
-              <Redirect to="/login" />
-            </Route>
-            <Route path="/login" exact={true}>
-              <Login />
-            </Route>
-            <Route>
-              <Redirect to="/login" />
-            </Route>
+            <Switch>
+              <Route path="/login" exact={true} component={Login} />
+              <Route>
+                <Redirect to="/login" />
+              </Route>
+            </Switch>
           </IonRouterOutlet>
         )}
       </IonReactRouter>

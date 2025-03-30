@@ -10,7 +10,7 @@ import {
   IonIcon,
 } from "@ionic/react"
 import { documentTextOutline, peopleOutline, peopleCircleOutline } from "ionicons/icons"
-import AdminLayout from "../components/AdminLayout"
+import AdminLayout from "../../components/SAdmin/AdminLayout"
 import "./Dashboard.css"
 
 const Dashboard: React.FC = () => {

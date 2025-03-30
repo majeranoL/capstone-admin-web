@@ -24,6 +24,7 @@ import {
 } from "@ionic/react"
 import { logInOutline, personAddOutline } from "ionicons/icons"
 import { useHistory } from "react-router-dom"
+import AdminLayout from "../../components/SAdmin/AdminLayout"
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("")
@@ -32,7 +33,7 @@ const Login: React.FC = () => {
   const [showLoading, setShowLoading] = useState(false)
   const [showAlert, setShowAlert] = useState(false)
   const [alertMessage, setAlertMessage] = useState("")
-  const history = useHistory()
+  const history = useHistory()  
   const router = useIonRouter()
 
   const handleSubmit = (e: React.FormEvent) => {

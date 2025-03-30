@@ -12,7 +12,7 @@ import {
   IonChip,
 } from "@ionic/react"
 import { createOutline, trashOutline, addOutline, lockClosedOutline, timeOutline, mailOutline } from "ionicons/icons"
-import AdminLayout from "../components/AdminLayout"
+import AdminLayout from "../../components/SAdmin/AdminLayout"
 import "./Pages.css"
 
 const Users: React.FC = () => {

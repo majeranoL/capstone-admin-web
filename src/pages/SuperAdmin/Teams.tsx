@@ -10,7 +10,7 @@ import {
   IonChip,
 } from "@ionic/react"
 import { createOutline, trashOutline, addOutline, peopleOutline, personOutline, briefcaseOutline } from "ionicons/icons"
-import AdminLayout from "../components/AdminLayout"
+import AdminLayout from "../../components/SAdmin/AdminLayout"
 import "./Dashboard.css"
 import "./Pages.css"
 

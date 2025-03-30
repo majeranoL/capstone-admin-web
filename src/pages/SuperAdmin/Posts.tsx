@@ -15,7 +15,7 @@ import {
   IonButton,
   IonToast,
 } from "@ionic/react"
-import AdminLayout from "../components/AdminLayout"
+import AdminLayout from "../../components/SAdmin/AdminLayout"
 import "./Dashboard.css"
 import "./Pages.css"
 

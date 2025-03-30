@@ -31,20 +31,24 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, pageTitle, b
   const location = useLocation();
   const router = useIonRouter();
 
-  // Close popover when route changes
+  // Close popover when route changes and cleanup
   useEffect(() => {
     setShowPopover(false);
+    return () => {
+      setShowPopover(false);
+    };
   }, [location]);
 
-  const handleLogout = () => {
-    // Clear user session
+  const handleLogout = async () => {
     localStorage.removeItem('user');
-    // First navigate to login
-    router.push('/login');
-    // Then reload the page to reset all states
-    setTimeout(() => {
-      window.location.href = '/login';
-    }, 100);
+    window.location.href = '/login';
+  };
+
+  const handlePageClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (showPopover) {
+      setShowPopover(false);
+    }
   };
 
   const handlePopoverClick = (e: React.MouseEvent) => {
@@ -52,12 +56,8 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, pageTitle, b
     setShowPopover(prev => !prev);
   };
 
-  const handlePopoverDismiss = () => {
-    setShowPopover(false);
-  };
-
   return (
-    <IonPage onClick={handlePopoverDismiss}>
+    <IonPage onClick={handlePageClick}>
       <IonHeader>
         <IonToolbar color="primary" className="main-header">
           <IonButtons slot="start">
@@ -82,14 +82,11 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, pageTitle, b
               </div>
               <IonPopover 
                 isOpen={showPopover}
-                onDidDismiss={handlePopoverDismiss}
-                trigger="trigger-button"
+                onDidDismiss={() => setShowPopover(false)}
                 dismissOnSelect={true}
-                onWillDismiss={() => setShowPopover(false)}
                 side="bottom"
                 alignment="end"
                 arrow={true}
-                reference="trigger"
                 className="admin-popover"
               >
                 <IonList className="popover-list">
